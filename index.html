@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Habits</h1>
+        <p id="today-label" class="muted"></p>
+      </div>
+      <div class="summary" aria-live="polite">
+        <span id="summary-done">0/0</span>
+        <span class="muted">done today</span>
+      </div>
+    </header>
+
+    <form id="add-form" class="add">
+      <input id="habit-name" type="text" maxlength="60" placeholder="New habit, e.g. Read 20 minutes" autocomplete="off" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <section id="list" class="list" aria-label="Habits"></section>
+
+    <p id="empty" class="empty" hidden>No habits yet. Add your first one above.</p>
+
+    <footer class="foot muted">
+      Data is stored only in this browser.
+      <button id="export" class="link" type="button">Export</button>
+      <button id="reset" class="link danger" type="button">Reset</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
