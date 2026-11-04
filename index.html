@@ -128,7 +128,10 @@ h2 { font-size: clamp(32px, 5vw, 60px); line-height: 1; font-weight: 700; margin
 @media (max-width: 900px) { .row { grid-template-columns: 80px minmax(0, 1fr); gap: 10px 18px; } .row p, .row .ex { grid-column: 2; } }
 
 /* feature band */
-.band { background: var(--forest); color: #eaf5ef; border-top: 0; }
+.band { background: var(--forest); color: #eaf5ef; border-top: 0; padding-block: 128px; }
+.how-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: end; }
+.how-head .sub { margin-top: 0; max-width: 46ch; justify-self: end; }
+@media (max-width: 860px) { .how-head { grid-template-columns: minmax(0, 1fr); gap: 16px; } .how-head .sub { justify-self: start; } .band { padding-block: 88px; } }
 .band .kicker { color: var(--mint); }
 .band .sub { color: rgba(234,245,239,.78); }
 .band-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
@@ -294,8 +297,10 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: 
 <section id="how">
   <div class="wrap">
     <span class="kicker">How it works</span>
-    <h2>It starts before you remember to press record.</h2>
-    <p class="sub">No meeting links to paste and no bot joining your call. Meeting Agent runs on your computer and works alongside whatever call app you already use.</p>
+    <div class="how-head">
+      <h2>It starts before you remember to press record.</h2>
+      <p class="sub">No meeting links to paste and no bot joining your call. Meeting Agent runs on your computer and works alongside whatever call app you already use.</p>
+    </div>
     <div class="rows">
       <div class="row">
         <time>00:00</time>
@@ -466,7 +471,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: 
     <div>
       <span class="kicker">About me</span>
       <h2>Built by a designer who hates losing the thread.</h2>
-      <div class="me" aria-hidden="true">AS</div>
     </div>
     <div class="about-copy">
       <p>I am <strong>Amith K Shinde</strong>, a product designer in Bengaluru with about four years of experience across edtech, fintech, enterprise and defence products.</p>
